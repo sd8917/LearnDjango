@@ -1,0 +1,40 @@
+
+{% extends "myapp/base.html" %}
+{% load static %}
+
+
+ {% block content %}
+
+ {% for blog in blogs %}
+
+<br />
+<!-- Note:  slug=blog.Slug here -->
+<a href="{% url 'blog:detail' slug=blog.Slug %}">
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card card-panel hoverable">
+          <div class="card-image">
+            <img src="{{ blog.image.url }}">
+            <span class="card-title teal darken-4 text-black">{{ blog.title }}</span>
+            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">thumb_up
+  </i></a>
+          </div>
+          <div class="card-content">
+            <p>{{ blog.content|truncatechars:200 |safe}}<a href="{% url 'blog:detail' slug=blog.Slug %}">Read more</a></p>
+          </div>
+
+            <div class="card-action center-align">
+            <p>{{ blog.tag }}  &nbsp&nbsp&nbsp&nbsp;
+              {{blog.date | date }}</p>
+          </div>
+        
+
+        </div>
+      </div>
+    </div>
+
+</a>
+            
+ {% endfor %}
+{% endblock content %}
