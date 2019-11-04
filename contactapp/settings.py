@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'contactapp.wsgi.application'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'sudhanshuraj8917@gmail.com' 
-EMAIL_HOST_PASSWORD = 'maa@8917'
+EMAIL_HOST_PASSWORD = '#########' #Input your password here
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 

@@ -4,9 +4,9 @@ from django.db import models
 class Student(models.Model):
     name = models.CharField(max_length=50)
     section = models.CharField(max_length=10)
-    RollNo = models.IntegerField()
-    Phone = models.IntegerField()
-    Topic = models.CharField(max_length=20)
+    rollno = models.IntegerField(default=1) #Note here the Primat key make this fi
+    phone = models.IntegerField()
+    topic = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
