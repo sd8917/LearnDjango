@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'blog',
     'importapp',
     'courseapp',
+    'accountapp',
     #import export file on the admin
     'import_export',
 
@@ -157,3 +158,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,'/static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+
+LOGIN_REDIRECT_URL='/'

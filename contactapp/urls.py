@@ -26,4 +26,6 @@ urlpatterns = [
     path('course/',include('courseapp.urls')),
     path('importapp/',include('importapp.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('register/',include('accountapp.urls'))
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
