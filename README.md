@@ -92,3 +92,60 @@
    {{ blog.content|truncatechars:200 |safe}}
 
 ```
+
+# Accountapp
+
+* In this we work the management of the account
+
+### Templates structure
+
+>templates/app_name/account.html
+
+>templates/registration/regitster.html
+
+>templates/registration/login.html
+
+### urls.py of main project
+'''
+
+path('accounts/',include('django.contrib.auth.urls')),
+    
+path('register/',include('accountapp.urls'))
+    
+'''
+### url.py of the app
+
+'''
+
+path('',views.view_name,name="view_name),
+
+path('register',views.register,name='register')
+
+'''
+
+### views.py
+'''
+
+def register(request):
+    if request.method == 'POST':
+        
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            username = form .cleaned_data['username']
+            password = form.cleaned_data['password1']
+
+            user = authenticate(username = username, password = password)
+            #Check for login status with your database data.
+            login(request, user)
+            return redirect('myaccount')
+            
+    else:
+        form = UserCreationForm()
+
+    context = {'form' : form}
+
+    return render(request, 'registration/register.html', context)
+
+'''
