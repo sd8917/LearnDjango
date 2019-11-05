@@ -1,0 +1,15 @@
+<!-- Registration for registering a user to access your page -->
+<body><h1> Registration page!!</h1>
+ <form method="POST" action = "{% url 'register' %}">
+    {% csrf_token %}
+
+    {% if form.errors %}
+    <p>There are errors in the form!</p>
+  
+    {% endif %}
+       {{ form.as_p }}
+
+    <input type="submit" value="Register">
+    
+ </form>
+</body>
